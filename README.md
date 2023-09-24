@@ -1,6 +1,6 @@
 # CodeAlphaa
 This repository contains my internship projects with CodeAlpha.
-It has three projects of web developments-
+It has three projects of web development-
 
 **A) Temperature Converter:**
 This project is designed to help users convert temperatures between three different scales: Kelvin, Celsius, and Fahrenheit.
