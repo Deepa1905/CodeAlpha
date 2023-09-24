@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-l5JN5gS6fPOJfD6/QVxzQmeQIGLVpl1rC5frkqLoAAnx5t8w1dN7w5ze5l5z/f5"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #000000;
+        }
+        #converter {
+            margin: 20px auto;
+            margin-top: 10%;
+            padding: 20px;
+            border: 1px solid #5c5656;
+            max-width: 400px;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+        h1 {
+            color: #614e4e;
+        }
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #555;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+        button {
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            cursor: pointer;
+            border-radius: 3px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="converter">
+        <h1>Temperature Converter <i class="fas fa-thermometer-half"></i></h1>
+        <label for="temperature"><i class="fas fa-temperature-high"></i> Enter Temperature:</label>
+        <input type="number" id="temperature" placeholder="Enter temperature" step="0.01">
+        <label for="scale"><i class="fas fa-balance-scale"></i> Select Scale:</label>
+        <select id="scale">
+            <option value="celsius">Celsius</option>
+            <option value="fahrenheit">Fahrenheit</option>
+            <option value="kelvin">Kelvin</option>
+        </select>
+        <button onclick="convertTemperature()"><i class="fas fa-exchange-alt"></i> Convert</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convertTemperature() {
+            const temperatureInput = document.getElementById('temperature').value;
+            const scaleSelect = document.getElementById('scale');
+            const selectedScale = scaleSelect.value;
+            let result = '';
+
+            if (selectedScale === 'celsius') {
+                const celsius = parseFloat(temperatureInput);
+                const fahrenheit = (celsius * 9/5) + 32;
+                const kelvin = celsius + 273.15;
+                result = `${celsius} Celsius = ${fahrenheit.toFixed(2)} Fahrenheit = ${kelvin.toFixed(2)} Kelvin`;
+            } else if (selectedScale === 'fahrenheit') {
+                const fahrenheit = parseFloat(temperatureInput);
+                const celsius = (fahrenheit - 32) * 5/9;
+                const kelvin = (fahrenheit + 459.67) * 5/9;
+                result = `${fahrenheit} Fahrenheit = ${celsius.toFixed(2)} Celsius = ${kelvin.toFixed(2)} Kelvin`;
+            } else if (selectedScale === 'kelvin') {
+                const kelvin = parseFloat(temperatureInput);
+                const celsius = kelvin - 273.15;
+                const fahrenheit = (kelvin * 9/5) - 459.67;
+                result = `${kelvin} Kelvin = ${celsius.toFixed(2)} Celsius = ${fahrenheit.toFixed(2)} Fahrenheit`;
+            }
+
+            document.getElementById('result').textContent = result;
+        }
+    </script>
+</body>
+</html>

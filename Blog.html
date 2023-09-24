@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .post {
+            background-color: #fff;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .post img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .post h2 {
+            color: #333;
+        }
+
+        .post p {
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            header {
+                font-size: 24px;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .post {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Blog</h1>
+    </header>
+
+    <div class="container">
+        <div class="post">
+            <img src="blog-image-1.jpg" alt="Blog Image 1">
+            <h2>Blog Post Title 1</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vitae lorem eu metus interdum condimentum.</p>
+        </div>
+
+        <div class="post">
+            <img src="blog-image-2.jpg" alt="Blog Image 2">
+            <h2>Blog Post Title 2</h2>
+            <p>Quisque non vehicula libero. Fusce tristique mauris et feugiat vehicula.</p>
+        </div>
+
+        <!-- Add more blog posts here -->
+    </div>
+</body>
+</html>

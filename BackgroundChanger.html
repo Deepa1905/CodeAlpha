@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Color Generator</title>
+    
+    <!-- Add Bootstrap CSS via CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-l5JN5gS6fPOJfD6/QVxzQmeQIGLVpl1rC5frkqLoAAnx5t8w1dN7w5ze5l5z/f5"
+        crossorigin="anonymous">
+    
+    <!-- Add Font Awesome CSS via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-">
+
+    <!-- Include jQuery from Google CDN -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Add Bootstrap JavaScript and Popper.js via CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-iBzCjLHXgCtbLW8z5fOmZ4nLRr5DJ0JG5z9g9KgbBJbW9RE5p5C5u1E3BjAiW1JlN"
+        crossorigin="anonymous"></script>
+
+    <!-- Your custom CSS styles can be placed here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            transition: background-color 0.5s;
+        }
+        #color-display {
+            font-size: 24px;
+            margin: 20px;
+        }
+        .btn {
+            font-size: 18px;
+            padding: 10px 20px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        .generate-btn {
+            background-color: #007BFF;
+            color: #fff;
+        }
+        .generate-btn:hover {
+            background-color: #0056b3;
+        }
+        .customize-btn {
+            background-color: #28a745;
+            color: #fff;
+        }
+        .customize-btn:hover {
+            background-color: #218838;
+        }
+        #mainBox {
+            margin: 20px auto;
+            margin-top: 10%;
+            padding: 20px;
+            border: 1px solid #5c5656;
+            max-width: 400px;
+            align-items: center;
+            justify-content: center;
+            background-color: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="mainBox">
+        <h1>Background Color Generator <i class="fas fa-paint-brush"></i></h1>
+        <p id="color-display">Background Color: #FFFFFF</p>
+        <button class="btn generate-btn" id="generateBtn"><i class="fas fa-random"></i> Generate Random Color</button>
+        <button class="btn customize-btn" id="customizeBtn" data-bs-toggle="modal" data-bs-target="#customizeModal"><i class="fas fa-palette"></i> Customize Color</button>
+    </div>
+     <!-- Customize Color Modal -->
+     <div class="modal fade" id="customizeModal" style="display: none;" tabindex="-1" aria-labelledby="customizeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="customizeModalLabel">Customize Background Color</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <label for="customColor">Enter a custom color (e.g., #RRGGBB):</label>
+                    <input type="text" id="customColor" class="form-control" placeholder="Enter color code">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="applyCustomColorBtn">Apply</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // jQuery code
+        $(document).ready(function() {
+            // Generate random color
+            $('#generateBtn').click(function() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                $('body').css('background-color', color);
+                $('#color-display').text(`Background Color: ${color}`);
+            });
+            
+            $('#customizeBtn').click(function() {
+                console.log('customise');
+                $('#customizeModal').modal("show");
+            });
+            // Customize color
+            $('#applyCustomColorBtn').click(function() {
+                // Remove this line: document.getElementById('customizeModal').style.display = 'block';
+               
+                const customColorInput = $('#customColor').val();
+                const validColorRegex = /^#([A-Fa-f0-9]{6})$/;
+                if (validColorRegex.test(customColorInput)) {
+                    $('body').css('background-color', customColorInput);
+                    $('#color-display').text(`Background Color: ${customColorInput}`);
+                    $('#customizeModal').modal('hide');
+                } else {
+                    alert('Invalid color code. Please use the format #RRGGBB (e.g., #FFA500 for orange).');
+                }
+            });
+            
+            });
+        
+    </script>
+</body>
+</html>
