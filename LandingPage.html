@@ -4,26 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Beauty of Uttarakhand</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.5.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-l5JN5gS6fPOJfD6/QVxzQmeQIGLVpl1rC5frkqLoAAnx5t8w1dN7w5ze5l5z/f5"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <style>
-    body{
+    /* Reset some default styles */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    /* Global styles */
+    body {
         font-family: Arial, sans-serif;
         margin: 0;
         padding: 0;
         background-color: #f5f5f5;
     }
 
+    /* Header styles */
     header {
-        background-color: #333;
+        background-color: #1a9094;
         color: #fff;
-        padding: 20px;
+        padding-top: 30px;
+   
         text-align: center;
     }
 
-    header h1 {
-        margin: 0;
-        padding: 0;
+    .logo {
+        font-size: 36px;
+        font-weight: bold;
+        text-transform: uppercase;
     }
 
+    /* Navigation styles */
+    .nav-links {
+        list-style: none;
+        display: flex;
+    }
+
+    .nav-links li {
+        margin-right: 20px;
+    }
+
+    .nav-links a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        transition: color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+        color: #FF5733;
+    }
+
+    /* Container styles */
     .container {
         max-width: 1200px;
         margin: 0 auto;
@@ -31,49 +70,158 @@
         text-align: center;
     }
 
+    /* Section styles */
     .section {
         background-color: #fff;
         margin: 20px 0;
         padding: 40px;
         border-radius: 5px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        text-align: left;
     }
 
     .section h2 {
-        color: #333;
+        color: #1a9094;
+        font-size: 28px;
+        margin-bottom: 20px;
     }
 
     .section p {
         color: #666;
+        font-size: 16px;
     }
 
+    /* Footer styles */
     footer {
-        background-color: #333;
+        background-color: #1a9094;
         color: #fff;
         padding: 20px;
         text-align: center;
     }
-        .image {
-            text-align: center;
-            margin-top: 20px;
-        }
+    .slideImg{
+        height: 50%;
+    }
+    /* Image styles */
+    .image {
+        text-align: center;
+        margin-top: 20px;
+    }
 
-        .image img {
-            max-width: 100%;
-            height: auto;
-        }
-        #hills{
-            width: 250px;
-            height: 200px;
-        }
+    .image img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    #hills {
+        width: 250px;
+        height: auto;
+    }
+
     </style>
 </head>
 <body>
     <header>
         <h1>Welcome to the Beauty of Uttarakhand</h1>
+            <nav class="navbar " style="background-color: #333;">
+                <!-- Navbar content -->
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Wildlife</a></li>
+                    <li><a href="#">Tourism</a></li>
+                    <li><a href="#">Cultural Richness</a></li>
+                </ul>
+                <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            </nav>
     </header>
 
-    <div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img class="d-block w-100 carousel-img slideImg" src="images/slide1.jpg" alt="First slide">
+                        <div class="carousel-caption d-none d-md-block text-center">
+                            <h5>Scenic Landscapes and Natural Beauty:</h5>
+                            <p>
+                                Uttarakhand is renowned for its stunning natural landscapes, including the majestic Himalayan mountains, lush green valleys,
+                                pristine rivers, and serene lakes. The state's diverse topography offers a wide range of breathtaking vistas, making it a paradise
+                                for nature lovers and outdoor enthusiasts.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 carousel-img slideImg" src="images/cultureslide.jpg" alt="Second slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Cultural Heritage and Traditions:</h5>
+                            <p>
+                                Explanation: Uttarakhand is not only known for its natural beauty but also for its
+                                vibrant cultural heritage. The state is rich in traditions, festivals, and local
+                                cuisine. Visitors can immerse themselves in the culture by participating in local
+                                festivals, savoring traditional dishes, and interacting with the warm and hospitable
+                                local communities.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 carousel-img slideImg" src="images/wildlside.jpeg" alt="Third slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Rich Biodiversity and Wildlife:</h5>
+                            <p>
+                                Uttarakhand boasts an incredible biodiversity, with numerous wildlife sanctuaries and national parks.
+                                The state is home to a variety of rare and endangered species, including tigers, leopards, elephants, and various species of birds.
+                                Exploring these protected areas offers a chance to witness the region's incredible wildlife in their natural habitat.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img class="d-block w-100 carousel-img slideImg" src="images/pilgrimSlide.jpg" alt="Fourth slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Pilgrimage Centers:</h5>
+                            <p>
+                                Uttarakhand is often referred to as the "Land of the Gods" due to its numerous pilgrimage centers. Haridwar, Rishikesh, Badrinath, Kedarnath, and Gangotri are among the most famous ones, drawing spiritual seekers from around the world.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <img class="d-block w-100 carousel-img slideImg" src="images/adventureSlide.jpeg" alt="Fifth slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Adventure Sports:</h5>
+                            <p>
+                                The state is a hub for adventure sports such as river rafting, trekking, paragliding, and skiing. Rishikesh is renowned for white-water rafting, while Auli is a popular skiing destination.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-item">
+                        <img class="d-block w-100 carousel-img slideImg" src="images/yoga.jpg" alt="Sixth slide">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Yoga and Meditation:</h5>
+                            <p>
+                                Rishikesh, known as the "Yoga Capital of the World," offers a serene environment for yoga and meditation enthusiasts. There are many ashrams and yoga centers where you can learn and practice.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- You can continue to add more points in the same format -->
+                    
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+    
         <div class="section">
             <h2>Explore Natural Beauty</h2>
             <p>Discover the breathtaking landscapes, serene mountains, and lush green valleys of Uttarakhand.</p>
@@ -110,5 +258,14 @@
     <footer>
         <p>&copy; 2023 Beauty of Uttarakhand</p>
     </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script>
+        $('.carousel').carousel({
+            interval: 2000
+          })
+    </script>
 </body>
+
 </html>
